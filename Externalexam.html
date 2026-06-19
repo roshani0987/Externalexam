@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Armstrong Checker</title>
+</head>
+<body style="text-align: center; margin-top: 50px; font-family: sans-serif;">
+
+    <h3>Armstrong Number Checker</h3>
+    <input type="number" id="num" placeholder="Enter a number">
+    <button onclick="check()">Check</button>
+    <p id="res" style="font-weight: bold;"></p>
+
+    <script>
+        function check() {
+            let n = document.getElementById("num").value;
+            if (!n) return;
+
+            let digits = n.split('');
+            let sum = digits.reduce((acc, d) => acc + Math.pow(Number(d), digits.length), 0);
+
+            document.getElementById("res").innerText = 
+                sum == n ? `${n} is an Armstrong number.` : `${n} is NOT an Armstrong number.`;
+        }
+    </script>
+
+</body>
+</html>
